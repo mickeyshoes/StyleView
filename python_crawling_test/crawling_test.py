@@ -9,7 +9,8 @@ driver = webdriver.Chrome('C:\\Users\\PSL\\Documents\\StyleView\\chromedriver.ex
 
 driver.implicitly_wait(15)
 
-url = 'https://www.instagram.com/hm_son7/?hl=ko'
+tag = 'hm_son7' # id
+url = 'https://www.instagram.com/' + tag # id + instargram address
 
 driver.get(url)
 totalcount = driver.find_element_by_class_name('g47SY').text
