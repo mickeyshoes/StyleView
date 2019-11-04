@@ -3,3 +3,5 @@ https://da-nika.tistory.com/21 -> python & googleAPI를 이용한 인스타그�
 https://github.com/rangyu/TIL/blob/master/python/%ED%8C%8C%EC%9D%B4%EC%8D%AC-Selenium%EC%9C%BC%EB%A1%9C-%EC%9B%B9-%ED%81%AC%EB%A1%A4%EB%A7%81%ED%95%98%EA%B8%B0.md
 -> python selenium으로 웹 크롤링하기
 https://eehoeskrap.tistory.com/335 -> 인스타그램 크롤링
+https://seongjaemoon.github.io/python/2018/05/16/python-course6.html -> selenium + python
+https://selenium.dev/selenium/docs/api/py/search.html?q=execute_script -> selenium 공식 라이브러리
