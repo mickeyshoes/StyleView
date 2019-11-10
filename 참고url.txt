@@ -5,3 +5,10 @@ https://github.com/rangyu/TIL/blob/master/python/%ED%8C%8C%EC%9D%B4%EC%8D%AC-Sel
 https://eehoeskrap.tistory.com/335 -> 인스타그램 크롤링
 https://seongjaemoon.github.io/python/2018/05/16/python-course6.html -> selenium + python
 https://selenium.dev/selenium/docs/api/py/search.html?q=execute_script -> selenium 공식 라이브러리
+https://wikidocs.net/47959 -> opencv 사람탐지
+https://pinkwink.kr/1124 -> opencv 간단하게 사람 몸 인식
+
+https://blog.naver.com/rhrkdfus/221335357361 -> google cloud vision api 사용방법
+https://blog.naver.com/PostView.nhn?blogId=rhrkdfus&logNo=221335357361&parentCategoryNo=&categoryNo=40&viewDate=&isShowPopularPosts=true&from=search -> google cloud api 설명
+
+http://allselenium.info/how-to-handle-exceptions-in-selenium-python-webdriver/ -> 비공개 계정 및 데이터 없는 계정 오류처리

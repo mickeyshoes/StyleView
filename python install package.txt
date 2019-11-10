@@ -1,1 +1,8 @@
 pip install selenium
+pip install django
+pip install request
+pip install --upgrade google-api-python-client
+pip install --upgrade google-cloud-vision
+
+setx GOOGLE_APPLICATION_CREDENTIALS C:\Users\PSL\Documents\StyleView\Styleview-1a040369d79d.json
+-> cmd에서 설정
