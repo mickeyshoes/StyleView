@@ -11,7 +11,7 @@ client = vision.ImageAnnotatorClient()
 # The name of the image file to annotate
 file_name = os.path.join(
     os.path.dirname(__file__),
-    'C:\\Users\\PSL\\Documents\\StyleView\\python_crawling_test\\hm_son7\\hm_son7_0.jpg')
+    'C:\\Users\\user\\Documents\\StyleView\\python_crawling_test\\hm_son7\\hm_son7_0.jpg')
 
 # Loads the image into memory
 with io.open(file_name, 'rb') as image_file:
@@ -24,6 +24,7 @@ labels = response.label_annotations
 
 print('Labels:')
 for label in labels:
-    print(label.description + '=' + str(int(label.score*100)) + "%")
+    if label.description == 'Person' :
+        print(label.description + '=' + str(int(label.score*100)) + "%")
 
 

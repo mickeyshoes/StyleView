@@ -3,6 +3,7 @@ from selenium.common.exceptions import NoSuchElementException
 import time
 import urllib.request
 import os
+import vision_identify
 
 #스크롤을 내린다.
 def scroll_down(webdriver):
@@ -13,11 +14,11 @@ def scroll_down(webdriver):
 options = webdriver.ChromeOptions()
 #options.add_argument('headless')
 options.add_argument('disable-gpu')
-driver = webdriver.Chrome('C:\\Users\\PSL\\Documents\\StyleView\\chromedriver.exe', options=options) # 설치경로입력
+driver = webdriver.Chrome('C:\\Users\\user\\Documents\\StyleView\\chromedriver.exe', options=options) # 설치경로입력
 
 driver.implicitly_wait(15)
 
-tag = 'hm_son7' # id
+tag = 'jiwoo_2009' # id
 url = 'https://www.instagram.com/' + tag # id + instargram address
 
 ID = input('ID')
@@ -31,6 +32,11 @@ print("총 게시물의 갯수 :", totallist[0].text)
 print("팔로워 :", totallist[1].text)
 
 photo_list = []
+
+if totallist[0].text == '0':
+    print("작성한 게시글이 없음")
+    exit()
+
 total_count = int(totallist[0].text)
 # if total_count > 101:
 #     total_count = 100
@@ -82,7 +88,7 @@ for n in photo_list:
     
 tmp_list = tmp_dict.values()
 
-save_path = 'C:\\Users\\PSL\\Documents\\StyleView\\python_crawling_test\\'+tag+'\\'
+save_path = 'C:\\Users\\user\\Documents\\StyleView\\python_crawling_test\\'+tag+'\\'
 
 if not os.path.isdir(save_path):
     os.makedirs(save_path)
@@ -93,6 +99,7 @@ if not os.path.isdir(save_path):
 index = 0
 
 for n in tmp_list:
+    vision_identify.localize_objects_uri(n)
     urllib.request.urlretrieve(n, save_path + tag + '_' +str(index)+'.jpg')
     index+=1
 
