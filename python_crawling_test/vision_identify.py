@@ -45,6 +45,6 @@ def localize_objects_uri(uri):
                 print(' - ({}, {})'.format(vertex.x, vertex.y))
 
 
-path = 'C:\\Users\\user\\Documents\\StyleView\\python_crawling_test\\hm_son7\\hm_son7_0.jpg'
+path = 'C:\\Users\\PSL\\Documents\\StyleView\\python_crawling_test\\hm_son7\\hm_son7_0.jpg'
 
-localize_objects(path)
+#localize_objects(path)

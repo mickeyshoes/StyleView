@@ -3,28 +3,64 @@ from selenium.common.exceptions import NoSuchElementException
 import time
 import urllib.request
 import os
-import vision_identify
 
 #스크롤을 내린다.
 def scroll_down(webdriver):
     webdriver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     time.sleep(3)
 
+#google api에 객체 분석
+def localize_objects_uri(uri, save_path, tag, index):
+    """Localize objects in the image on Google Cloud Storage
+
+    Args:
+    uri: The path to the file in Google Cloud Storage (gs://...)
+    """
+    from google.cloud import vision
+    client = vision.ImageAnnotatorClient()
+
+    image = vision.types.Image()
+    image.source.image_uri = uri
+
+    objects = client.object_localization(
+        image=image).localized_object_annotations
+
+    #print('Number of objects found: {}'.format(len(objects)))
+
+    #사람으로 분류된 사진만 저장
+    for object_ in objects:
+        if object_.name == "Person": # 남자, 여자도 추가해야함
+            print('\n{} (confidence: {})'.format(object_.name, object_.score))
+            urllib.request.urlretrieve(n, save_path + tag + '_' +str(index)+'.jpg')
+            # print('Normalized bounding polygon vertices: ')
+            # for vertex in object_.bounding_poly.normalized_vertices:
+            #     print(' - ({}, {})'.format(vertex.x, vertex.y))
+
+
 # chrome 창을 띄우지 않고 크롤링
 options = webdriver.ChromeOptions()
 #options.add_argument('headless')
 options.add_argument('disable-gpu')
-driver = webdriver.Chrome('C:\\Users\\user\\Documents\\StyleView\\chromedriver.exe', options=options) # 설치경로입력
+driver = webdriver.Chrome('C:\\Users\\PSL\\Documents\\StyleView\\chromedriver.exe', options=options) # 설치경로입력
 
 driver.implicitly_wait(15)
 
-tag = 'jiwoo_2009' # id
+tag = 'hm_son7' # id
 url = 'https://www.instagram.com/' + tag # id + instargram address
 
 ID = input('ID')
 PW = input('PW')
 
+#드라이버 실행
 driver.get(url)
+
+# 비공개 계정은 프로필 사진을 담아내는 클래스가 다름 ('be6sR')
+try:
+    picture = driver.find_element_by_class_name('_6q-tv')
+except NoSuchElementException as exception:
+    print("비공개 계정이라서 접근할 수 없습니다.")
+    exit()
+
 totallist = driver.find_elements_by_class_name('g47SY')
 profile = driver.find_element_by_class_name('_6q-tv')
 print("프로필 사진:", profile.get_attribute('src'))
@@ -37,9 +73,8 @@ if totallist[0].text == '0':
     print("작성한 게시글이 없음")
     exit()
 
+
 total_count = int(totallist[0].text)
-# if total_count > 101:
-#     total_count = 100
 
 # 크롤링 중 로그인 문제로 인한 로그인 선행
 time.sleep(1)
@@ -88,7 +123,7 @@ for n in photo_list:
     
 tmp_list = tmp_dict.values()
 
-save_path = 'C:\\Users\\user\\Documents\\StyleView\\python_crawling_test\\'+tag+'\\'
+save_path = 'C:\\Users\\PSL\\Documents\\StyleView\\python_crawling_test\\'+tag+'\\'
 
 if not os.path.isdir(save_path):
     os.makedirs(save_path)
@@ -99,8 +134,6 @@ if not os.path.isdir(save_path):
 index = 0
 
 for n in tmp_list:
-    vision_identify.localize_objects_uri(n)
-    urllib.request.urlretrieve(n, save_path + tag + '_' +str(index)+'.jpg')
+    localize_objects_uri(n, save_path, tag, index)
     index+=1
-
 driver.quit()
