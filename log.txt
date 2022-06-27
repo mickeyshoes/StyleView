@@ -1,0 +1,92 @@
+    1  cd /workspace/StyleView_Server; clear
+    2  export LANG=en_US.UTF-8;export LANGUAGE=en_US.UTF-8;locale-gen;source ~/.profile; clear;
+    3  whoami
+    4  history
+    5  exit
+    6  export LANG=en_US.UTF-8;export LANGUAGE=en_US.UTF-8;locale-gen;alias python=python3;alias pip=pip3;source ~/.profile; clear;
+    7  cd /workspace/StyleView_Server; clear
+    8  ls
+    9  vi ~/.bashrc 
+   10  sudo pip install selenium
+   11  pip install request
+   12  sudo pip install --upgrade google-api-python-client
+   13  sudo pip install --upgrade google-cloud-vision
+   14  $ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+   15  wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+   16  echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+   17  sudo apt-get update
+   18  sudo apt-get install google-chrome-stable
+   19  mysql -u root -p
+   20  vi ~/.bashrc 
+   21  chromium-browser -version
+   22  sudo apt-get install chromium-browser
+   23  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+   24  sudo dpkg -i google-chrome-stable_current_amd64.deb
+   25  google-chrome --version
+   26  vi ~/.bashrc 
+   27  sudo cp /workspace/StyleView_Server/chromedriver /usr/bin/
+   28  cd /usr/bin/
+   29  chmod a+x chromedriver 
+   30  cd /workspace/StyleView_Server/
+   31  ls
+   32  chmod a+x chromedriver 
+   33  export LANG=en_US.UTF-8;export LANGUAGE=en_US.UTF-8;locale-gen;alias python=python3;alias pip=pip3;source ~/.profile; clear;
+   34  cd /workspace/StyleView_Server; clear
+   35  vi ~/.bashrc 
+   36  google-chrome --version
+   37  python3 --version
+   38  ls -al /usr/bin/ | grep chrome
+   39  vi ~/.bashrc 
+   40  cd /workspace/StyleView_Server; clear
+   41  export LANG=en_US.UTF-8;export LANGUAGE=en_US.UTF-8;locale-gen;alias python=python3;alias pip=pip3;source ~/.profile; clear;
+   42  python3 /workspace/StyleView_Server/manage.py migrate && python3 /workspace/StyleView_Server/manage.py runserver 0.0.0.0:80
+   43  ㅣㄴ
+   44  ls
+   45  python manage.py startapp dbConnect
+   46  mysql
+   47  sudo apt-get update
+   48  sudo apt-get install mysql-server
+   49  sudo ufw allow mysql
+   50  mysql
+   51  sudo /usr/bin/mysql -u root -p
+   52  mysql
+   53  sudo /usr/bin/mysql -u root -p
+   54  apt search mysql
+   55  sudo apt-get install mysql-client
+   56  sudo systemctl start mysql
+   57  top
+   58  clear
+   59  apt search htop
+   60  sudo apt-get install htop
+   61  htop
+   62  mysql
+   63  sudo mysql_secure_installation
+   64  sudo su
+   65  whoami
+   66  python3 /workspace/StyleView_Server/manage.py migrate && python3 /workspace/StyleView_Server/manage.py runserver 0.0.0.0:80
+   67  sudo service mysql start
+   68  mysql -p
+   69  python3 /workspace/StyleView_Server/manage.py migrate && python3 /workspace/StyleView_Server/manage.py runserver 0.0.0.0:80
+   70  pip install pymysql
+   71  python3 /workspace/StyleView_Server/manage.py migrate && python3 /workspace/StyleView_Server/manage.py runserver 0.0.0.0:80
+   72  mysql -p
+   73  python3 /workspace/StyleView_Server/manage.py migrate && python3 /workspace/StyleView_Server/manage.py runserver 0.0.0.0:80
+   74  pip install mysql
+   75  sudo pip install mysql-connector-python
+   76  python3 /workspace/StyleView_Server/manage.py migrate && python3 /workspace/StyleView_Server/manage.py runserver 0.0.0.0:80
+   77  cd /workspace/StyleView_Server; clear
+   78  export LANG=en_US.UTF-8;export LANGUAGE=en_US.UTF-8;locale-gen;source ~/.profile; clear;
+   79  export LANG=en_US.UTF-8;export LANGUAGE=en_US.UTF-8;locale-gen;alias python=python3;alias pip=pip3;source ~/.profile; clear;
+   80  cd /workspace/StyleView_Server; clear
+   81  mysql -u root -p
+   82  service mysql start
+   83  ls
+   84  wget https://chromedriver.storage.googleapis.com/2.46/chromedriver_linux64.zip
+   85  unzip chromedriver_linux64.zip 
+   86  htop
+   87  ls
+   88  dpkg -r google-chrome-stable
+   89  ls -al /usr/bin/ | grep chrome
+   90  history
+   91  sudo apt purge chromium-*
+   92  history > log.txt
